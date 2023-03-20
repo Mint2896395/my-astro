@@ -1,0 +1,63 @@
+---
+import "../styles/login.scss";
+---
+
+<body class="" data-controller="test-readiness" data-stimulus-ready="true" data-javascript-files-loaded="true">
+    <span class="u-for-screen-reader" aria-live="assertive">Sign in to HEY</span>
+
+      <nav class="navbar">
+        <div class="navbar__content">
+          <div class="navbar__logo navbar__logo--plain u-show@medium">HEY</div>
+        </div>
+      </nav>
+
+    <div id="flash"></div>
+    <div id="flash_message_for_screen_reader"></div>
+
+    <main id="main-content" class="page page--center page--medium@medium" tabindex="-1" data-controller="bridge--offline bridge--page bridge--page-zoom bridge--cable page ">
+      <div class="page__content">
+        
+        <div class="align--center">
+            <header class="align--center push_double--bottom">
+                <h1 class="hdg hdg--xx-large flush--top push--bottom">
+                Welcome back.<br>
+                Let's sign in.
+                </h1>
+            </header>
+
+            <form id="session_form" data-controller="form" data-action="turbo:submit-start->form#submitStart" action="/sign_in" accept-charset="UTF-8" data-remote="true" method="post">
+                <label class="u-display-b">
+                <h2 class="hdg hdg--large u-display-b flush--top push_quarter--bottom txt--normal">
+                    Enter your email address
+                </h2>
+
+                <input class="input input--full-width input--underlined align--center txt--x-large txt--bold" required="required" autocomplete="email" autofocus="autofocus" autocorrect="off" autocapitalize="off" size="30" type="email" name="email_address" id="email_address">
+                </label>
+
+                <label class="u-display-b">
+                <h2 class="hdg hdg--large u-display-b push_double--top push_quarter--bottom txt--normal">
+                    And your password
+                </h2>
+
+                <input class="input input--full-width input--underlined align--center txt--x-large txt--bold" required="required" autocomplete="current-password" autocorrect="off" autocapitalize="off" size="30" type="password" name="password" id="password">
+                </label>
+
+                <div class="u-relative push--top">
+                    <input type="submit" name="commit" value="Sign in" class="btn btn--focusable btn--tertiary align--center txt--large btn-with-spinner" data-form-target="submit" data-disable-with="Sign in">
+                    <div class="spinner">
+                        <div class="spinner__dot spinner__dot--1"></div>
+                        <div class="spinner__dot spinner__dot--2"></div>
+                        <div class="spinner__dot spinner__dot--3"></div>
+                    </div>
+                </div>
+            </form>
+
+            <p class="txt--normal txt--subtle">
+                <strong><a class="decorated" href="/identity/password_reset/new">Forgot your password?</a></strong><br>
+                We'll help you reset it so you can get back in.
+            </p>
+        </div>
+
+      </div>
+    </main>
+</body>
